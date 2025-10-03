@@ -12,7 +12,7 @@
     <style>
         body { background: linear-gradient(135deg, #f8fafc 0%, #e2eafc 100%); min-height: 100vh; }
         .main-card { border-radius: 1rem; border: none; }
-        .header-bar { background: #0d6efd; color: #fff; border-radius: 1rem 1rem 0 0; padding: 2rem 1.5rem 1rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(13,110,253,0.08); }
+        .header-bar { border-radius: 1rem 1rem 0 0; padding: 2rem 1.5rem 1rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(13,110,253,0.08); }
         .btn-primary { border-radius: 2rem; }
         .table thead th { background: #e9ecef; }
     </style>
@@ -43,7 +43,7 @@
                         </div>
                     @endif
 
-                    <div class="d-flex justify-content-end mb-3">
+                    <div class="d-flex mb-3">
                         <a href="{{ route('allergeen.create') }}" class="btn btn-primary px-4">
                             <i class="bi bi-plus-circle"></i> Nieuwe Allergeen
                         </a>
