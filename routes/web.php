@@ -1,8 +1,10 @@
 <?php
 
 use livewire\Volt\Volt;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AllergeenController;
+use App\Http\Controllers\MagazijnController;
+use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,5 +28,12 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/password', 'settings.password')->name('settings.password');
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
+
+Route::middleware('auth')->group(function () {
+    Route::get('/magazijn', [MagazijnController::class, 'index'])->name('magazijn.index');
+    Route::get('/magazijn/product/{id}/leveringen', [MagazijnController::class, 'leveringInfo'])
+        ->name('magazijn.leveringInfo');
+});
+
 
 require __DIR__.'/auth.php';
